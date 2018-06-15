@@ -55,6 +55,18 @@ var stylePoints = new ol.style.Style({
   })
 });
 
+var styleWalk = new ol.style.Style({
+  stroke: new ol.style.Stroke({
+      color: 'rgba(82,184,48,0.7)',
+      width: 8
+  }),
+  image: new ol.style.Circle({
+    radius: 10,
+    fill: new ol.style.Fill({
+      color: 'rgba(82,184,48,0.7)',
+    })
+  }),
+});
 
 var vectorLines = new ol.layer.Vector({
   source: new ol.source.Vector({
@@ -74,6 +86,14 @@ var vectorPoints = new ol.layer.Vector({
     fStyle.getText().setText(f.get('stop'));
     return fStyle;
   }
+});
+
+var vectorWalk = new ol.layer.Vector({
+  source: new ol.source.Vector({
+    url: 'walk.json',
+    format: new ol.format.GeoJSON()
+  }),
+  style:styleWalk
 });
 
 var baseLayer = new ol.layer.Tile({
@@ -127,7 +147,7 @@ var appView = new ol.View({
 });
 
 var map = new ol.Map({
-  layers: [baseLayer, vectorLines, vectorPoints, targetLayer],
+  layers: [baseLayer, vectorLines, vectorPoints, vectorWalk, targetLayer],
   overlays: [popup],
   target: 'map',
   view: appView
@@ -179,7 +199,10 @@ map.on('singleclick', function(evt) {
   map.forEachFeatureAtPixel(evt.pixel, function (feature, layer) {
     var p = feature.getProperties();
     if(p['stop']) {
-      var message = '<img src="img/' + p.img + '" style="width: 400px;" />';
+      var message = '';
+      if(p.img) {
+        message += '<img src="img/' + p.img + '" style="width: 400px;" />';
+      }      
       message += '<h3>' + p.stop + '</h3>';
       var fCenter = feature.getGeometry().getCoordinates();
       $('#sidebar-main-block').html(message);
