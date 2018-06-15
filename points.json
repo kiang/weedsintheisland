@@ -1,0 +1,103 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "臺南火車站前",
+              "img": "tainan_station.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.21132409573,
+                    22.997642762757
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "公會堂",
+              "img": "target.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.20588457584,
+                    22.994225582638
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "蝸牛巷(花旗銀行)",
+              "img": "bank.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.20093858242,
+                    22.99294164868
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "麥當勞",
+              "img": "mc.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.19900739193,
+                    22.992763872247
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "正興街",
+              "img": "street.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.19651830196,
+                    22.994482367965
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "新美街(狐狸尾巴)",
+              "img": "fox.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.2006059885,
+                    22.995855173541
+                ]
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+              "stop": "全美戲院",
+              "img": "all_beauty.jpg"
+            },
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    120.2016466856,
+                    22.99520333954
+                ]
+            }
+        }
+    ]
+}
